@@ -9,12 +9,17 @@ export default function AdminPage() {
   if (!isOwner)
     return (
       <p>
-        로그인이 필요합니다. <Link href="/login" className="underline">로그인하기</Link>
+        로그인이 필요해요. <Link href="/login" className="underline">로그인하기</Link>
       </p>
     )
   return (
     <div>
-      <h1 className="mb-4 text-xl font-bold">책 추가</h1>
+      <div className="mb-4 flex items-center justify-between">
+        <h1 className="text-xl font-bold">책 추가</h1>
+        <Link href="/admin/settings" className="text-sm text-gray-500 underline">
+          ⚙ 환경설정 (별점 기준·분야)
+        </Link>
+      </div>
       <BookForm />
     </div>
   )
